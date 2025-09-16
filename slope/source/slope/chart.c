@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Elvis Teixeira
+ * Copyright (C) 2017,2025  Elvis Teixeira, Anatoliy Sokolov
  *
  * This source code is free software: you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General
@@ -80,15 +80,6 @@ void slope_chart_add_scale(SlopeChart *self, SlopeScale *scale)
 {
   SlopeChartPrivate *priv = slope_chart_get_instance_private (self);
   slope_figure_add_scale(priv->figure, scale);
-}
-
-void slope_chart_write_to_png(SlopeChart *self,
-                              const char *filename,
-                              int         width,
-                              int         height)
-{
-  SlopeChartPrivate *priv = slope_chart_get_instance_private (self);
-  slope_figure_write_to_png(priv->figure, filename, width, height);
 }
 
 void slope_chart_redraw(SlopeChart *self)

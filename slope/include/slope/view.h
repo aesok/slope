@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Elvis Teixeira
+ * Copyright (C) 2017,2025  Elvis Teixeira, Anatoliy Sokolov
  *
  * This source code is free software: you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General
@@ -67,11 +67,6 @@ void slope_view_set_figure(SlopeView *self, SlopeFigure *figure);
 void slope_view_redraw(SlopeView *self);
 
 SlopeFigure *slope_view_get_figure(SlopeFigure *self);
-
-void slope_view_write_to_png(SlopeView * self,
-                             const char *filename,
-                             int         width,
-                             int         height);
 
 SLOPE_END_DECLS
 

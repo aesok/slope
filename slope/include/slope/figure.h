@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017,2023  Elvis Teixeira, Anatoliy Sokolov
+ * Copyright (C) 2017,2023,2025  Elvis Teixeira, Anatoliy Sokolov
  *
  * This source code is free software: you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General
@@ -81,11 +81,6 @@ gboolean slope_figure_get_is_managed(SlopeFigure *self);
 void slope_figure_set_is_managed(SlopeFigure *self, gboolean managed);
 
 void slope_figure_draw(SlopeFigure *self, const graphene_rect_t *rect, cairo_t *cr);
-
-void slope_figure_write_to_png(SlopeFigure *self,
-                               const char * filename,
-                               int          width,
-                               int          height);
 
 SlopeView *slope_figure_get_view(SlopeFigure *self);
 

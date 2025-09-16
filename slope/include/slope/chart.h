@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Elvis Teixeira
+ * Copyright (C) 2017,2025  Elvis Teixeira, Anatoliy Sokolov
  *
  * This source code is free software: you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General
@@ -69,11 +69,6 @@ GtkWidget *slope_chart_get_view(SlopeChart *self);
 void slope_chart_redraw(SlopeChart *self);
 
 void slope_chart_add_scale(SlopeChart *self, SlopeScale *scale);
-
-void slope_chart_write_to_png(SlopeChart *self,
-                              const char *filename,
-                              int         width,
-                              int         height);
 
 SLOPE_END_DECLS
 

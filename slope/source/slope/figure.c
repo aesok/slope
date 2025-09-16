@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017,2023  Elvis Teixeira, Anatoliy Sokolov
+ * Copyright (C) 2017,2023,2025  Elvis Teixeira, Anatoliy Sokolov
  *
  * This source code is free software: you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General
@@ -240,31 +241,6 @@ void _figure_set_view(SlopeFigure *self, SlopeView *view)
       _scale_set_figure(scale, self);
       iter = iter->next;
     }
-}
-
-void slope_figure_write_to_png(SlopeFigure *self,
-                               const char * filename,
-                               int          width,
-                               int          height)
-{
-  SlopeFigurePrivate *priv;
-  cairo_surface_t *   image;
-  cairo_t *           cr;
-  int                 mode_back;
-  if (filename == NULL || width <= 0 || height <= 0)
-    {
-      return;
-    }
-  priv = slope_figure_get_instance_private (self);
-  image       = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
-  cr          = cairo_create(image);
-  mode_back   = priv->frame_mode;
-  priv->frame_mode = SLOPE_FIGURE_RECTANGLE;
-  slope_figure_draw(self, &GRAPHENE_RECT_INIT (0.0, 0.0, width, height), cr);
-  cairo_surface_write_to_png(image, filename);
-  priv->frame_mode = mode_back;
-  cairo_surface_destroy(image);
-  cairo_destroy(cr);
 }
 
 static void _figure_update_layout(SlopeFigure *self)

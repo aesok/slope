@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017,2023  Elvis Teixeira, Anatoliy Sokolov
+ * Copyright (C) 2017,2023,2025  Elvis Teixeira, Anatoliy Sokolov
  *
  * This source code is free software: you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General
@@ -98,18 +98,6 @@ GtkWidget *slope_view_new_with_figure(SlopeFigure *figure)
   GtkWidget *self = GTK_WIDGET(g_object_new(SLOPE_VIEW_TYPE, NULL));
   slope_view_set_figure(SLOPE_VIEW(self), figure);
   return self;
-}
-
-void slope_view_write_to_png(SlopeView * self,
-                             const char *filename,
-                             int         width,
-                             int         height)
-{
-  SlopeViewPrivate *priv = slope_view_get_instance_private (self);
-  if (priv->figure != NULL)
-    {
-      slope_figure_write_to_png(priv->figure, filename, width, height);
-    }
 }
 
 static void
